@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import TextField from './components/TextField';
+import StartPage from './components/StartPage';
 
 function App() {
   return (
     <div className="App">
-      <TextField name="name" />
+      <StartPage />
     </div>
   );
 }
