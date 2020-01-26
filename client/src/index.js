@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { handleInfo } from './reducers/handleInfo';
 
-const store = createStore(handleBooks, applyMiddleware(thunk));
+const store = createStore(handleInfo, applyMiddleware(thunk));
 
 
 ReactDOM.render(

@@ -5,6 +5,7 @@ export default class StartPage extends React.Component {
 
     handleClick = () => {
         console.log('clicked')
+        React.unmountComponentAtNode()
     }
 
     render() {
