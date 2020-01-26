@@ -58,7 +58,8 @@ p {
   animation: moveInFromBottom 2s ease-out;
 }
 
-.header__btn:hover {
+.header__btn:hover,
+.form__button:hover {
   transform: translateY(-0.2rem);
 }
 
@@ -67,6 +68,7 @@ p {
   margin: 1rem 33vw;
   border: 0.25rem solid white;
   border-radius: 2rem;
+  position: relative;
 
   animation: moveInFromBottom 1s ease-out;
 }
@@ -78,6 +80,19 @@ p {
 
 .formDiv .formDiv__form--label {
   font-size: 3rem;
+}
+
+.form__button {
+  display: block;
+  position: relative;
+  margin: 1.5rem auto;
+  padding: 0.75rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
+
+  animation: moveInFromBottom 1s ease-out;
 }
 
 input[type=text] {

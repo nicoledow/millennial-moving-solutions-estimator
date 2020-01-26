@@ -1,18 +1,54 @@
 import React from 'react';
-import TextField from './TextField';
+import { connect } from 'react-redux';
 
-export default class Form extends React.Component {
+import submitForm from '../actions/submitForm';
+
+class Form extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            formValue: ''
+        }
+    }
+
+    handleChange = e => {
+        this.setState({ formValue: e.target.value });
+    }
+
+    handleSubmit = e => {
+       e.preventDefault();
+       let formData = {
+           infoType: this.props.currentSection,
+           data: this.state.formValue
+       };
+       console.log('formData in handleSubmit', formData);
+       this.props.submitForm(formData);
+    }
 
     render() {
         return (
             <div className="formDiv">
-                <form className="formDiv__form">
-                    <label className="formDiv__form--label">
-                        Starting Zip Code:
-                        <TextField name="startingZip" />
-                    </label>
+                <form className="formDiv__form" onSubmit={e => this.handleSubmit(e)}>
+                    <label className="formDiv__form--label">{this.props.currentSection}</label>
+                        <input type="text" 
+                            name={this.props.currentSection} 
+                            value={this.state.formValue} 
+                            onChange={e => this.handleChange(e)} />
+                        <input type="submit" className="form__button" value="Next" />
                 </form>
             </div>
-        )
+        );
     }
 }
+
+const mapStateToProps = state => {
+    return { currentSection: state.currentSection }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        submitForm: formData => dispatch(submitForm(formData))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
