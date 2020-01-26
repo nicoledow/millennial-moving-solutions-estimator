@@ -15,6 +15,7 @@ class Form extends React.Component {
         this.setState({ formValue: e.target.value });
     }
 
+
     handleSubmit = e => {
        e.preventDefault();
        let formData = {
@@ -26,19 +27,26 @@ class Form extends React.Component {
     }
 
     render() {
-        return (
-            <div className="formDiv">
-                <form className="formDiv__form" onSubmit={e => this.handleSubmit(e)}>
-                    <label className="formDiv__form--label">{this.props.currentSection}</label>
-                        <input type="text" 
-                            name={this.props.currentSection} 
-                            value={this.state.formValue} 
-                            onChange={e => this.handleChange(e)} />
-                        <input type="submit" className="form__button" value="Next" />
-                </form>
-            </div>
-        );
+        switch(this.props.currentSection) {
+            case 'Starting Zip Code':
+            case 'Destination Zip Code':
+                return (
+                    <div className="formDiv">
+                        <form className="formDiv__form" onSubmit={e => this.handleSubmit(e)}>
+                            <label className="formDiv__form--label">{this.props.currentSection}</label>
+                                <input type="text"
+                                    name={this.props.currentSection}
+                                    value={this.state.formValue}
+                                    onChange={e => this.handleChange(e)} />
+                                <input type="submit" className="form__button" value="Next" />
+                        </form>
+                    </div>
+                );
+            default:
+                return <p>An error occurred.</p>
+        }
     }
+
 }
 
 const mapStateToProps = state => {
