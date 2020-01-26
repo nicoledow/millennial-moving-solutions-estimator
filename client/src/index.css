@@ -1,7 +1,15 @@
+/* font:
+font-family: 'Source Code Pro', monospace;
+*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
@@ -14,30 +22,38 @@ p {
 }
 
 .header {
-  animation: moveInFromTop 1s ease-out;
+  animation: moveInFromTop 2s ease-out;
   position: relative;
 }
 
 .header__logo {
   height: 75vh;
+  width: 75vw;
 }
 
 .header__p {
   width: 75%;
   text-align: center;
   display: inline-block;
+  font-family: 'Source Code Pro', monospace;
 
-  animation: moveInFromBottom 1s ease-out;
+  animation: moveInFromBottom 2s ease-out;
 }
 
 .header__btn {
   display: block;
   position: relative;
-  margin: 15px auto;
-  padding: 7.5px;
+  margin: 1.5rem auto;
+  padding: 0.75rem;
   border-radius: 10rem;
+  text-transform: uppercase;
+  font-family: 'Source Code Pro', monospace;
 
-  animation: moveInFromBottom 1.25s ease-out;
+  animation: moveInFromBottom 2s ease-out;
+}
+
+.header__btn:hover {
+  transform: translateY(-0.2rem);
 }
 
 @keyframes moveInFromTop {
