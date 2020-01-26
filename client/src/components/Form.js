@@ -1,11 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import TextField from './TextField';
 
 export default class Form extends React.Component {
 
     render() {
         return (
-            <p>Form</p>
+            <div className="formDiv">
+                <form className="formDiv__form">
+                    <label className="formDiv__form--label">
+                        Starting Zip Code:
+                        <TextField name="startingZip" />
+                    </label>
+                </form>
+            </div>
         )
     }
 }

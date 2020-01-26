@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import HeaderImg from './HeaderImg';
 import Form from './Form';
 
 export default class StartPage extends React.Component {
@@ -16,7 +17,12 @@ export default class StartPage extends React.Component {
 
     render() {
         if (this.state.formBegun) {
-            return <Form />
+            return(
+                <div>
+                    <HeaderImg />
+                    <Form />
+                </div>
+            )
         } else {
             return <Header begin={this.begin}/>
         }

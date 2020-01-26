@@ -59,6 +59,32 @@ p {
   transform: translateY(-0.2rem);
 }
 
+.formDiv {
+  padding: 5 rem;
+  margin: 1rem 33vw;
+  border: 0.25rem solid white;
+  border-radius: 2rem;
+
+  animation: moveInFromBottom 1s ease-out;
+}
+
+.formDiv__form--label {
+  color: #fff;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.formDiv .formDiv__form--label {
+  font-size: 3rem;
+}
+
+input[type=text] {
+  margin: 2rem;
+  padding: 1.5rem 2.2rem;
+  font-size: 2.5rem;
+  font-family: 'Source Code Pro', monospace;
+}
+
+
 @keyframes moveInFromTop {
   0%{
     opacity: 0;
