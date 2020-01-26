@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class Form extends React.Component {
+export default class Form extends React.Component {
 
     render() {
         return (
@@ -9,9 +9,3 @@ class Form extends React.Component {
         )
     }
 }
-
-const mapStateToProps = () => {
-    return { currentSection: state.currentSection };
-}
-
-export default connect(mapStateToProps)(Form);
