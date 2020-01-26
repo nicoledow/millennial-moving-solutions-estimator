@@ -36,6 +36,8 @@ p {
   text-align: center;
   display: inline-block;
   font-family: 'Source Code Pro', monospace;
+  font-size: 1.5rem;
+  font-weight: 400;
 
   animation: moveInFromBottom 2s ease-out;
 }
@@ -48,6 +50,7 @@ p {
   border-radius: 10rem;
   text-transform: uppercase;
   font-family: 'Source Code Pro', monospace;
+  font-size: 2rem;
 
   animation: moveInFromBottom 2s ease-out;
 }
