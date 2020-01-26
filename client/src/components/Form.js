@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import TextField from './TextField';
 
 export default class Form extends React.Component {
