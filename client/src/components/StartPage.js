@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './logo.png';
 
-export default class StartPage {
+export default class StartPage extends React.Component {
 
     handleClick = () => {
         console.log('clicked')
