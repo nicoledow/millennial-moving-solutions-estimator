@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import TextFieldForm from './TextFieldForm';
 import submitForm from '../actions/submitForm';
 
 class Form extends React.Component {
@@ -10,11 +11,6 @@ class Form extends React.Component {
             formValue: ''
         }
     }
-
-    handleChange = e => {
-        this.setState({ formValue: e.target.value });
-    }
-
 
     handleSubmit = e => {
        e.preventDefault();
@@ -26,27 +22,16 @@ class Form extends React.Component {
        this.props.submitForm(formData);
     }
 
+
     render() {
         switch(this.props.currentSection) {
             case 'Starting Zip Code':
             case 'Destination Zip Code':
-                return (
-                    <div className="formDiv">
-                        <form className="formDiv__form" onSubmit={e => this.handleSubmit(e)}>
-                            <label className="formDiv__form--label">{this.props.currentSection}</label>
-                                <input type="text"
-                                    name={this.props.currentSection}
-                                    value={this.state.formValue}
-                                    onChange={e => this.handleChange(e)} />
-                                <input type="submit" className="form__button" value="Next" />
-                        </form>
-                    </div>
-                );
+                return <TextFieldForm currentSection={this.props.currentSection} handleSubmit={this.handleSubmit} />;
             default:
-                return <p>An error occurred.</p>
+                return <p>An error occurred. Please try again.</p>;
         }
     }
-
 }
 
 const mapStateToProps = state => {
