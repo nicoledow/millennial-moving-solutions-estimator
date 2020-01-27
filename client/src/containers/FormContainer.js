@@ -21,15 +21,28 @@ export default class FormContainer extends React.Component {
         };
     }
 
+    handleData = data => {
+        //update this.state to reflect data typed into form
+        if (data.startingZip) {
+            this.setState({ startingZip: data.startingZip });
+        }
+        if (data.destinationZip) {
+            this.setState({ destinationZip: data.destinationZip });
+        }
+
+        this.setState(prevState => ({
+            currentStep: prevState.currentStep + 1
+        }));
+    }
+
     render() {
-        return (
-            <div className="formDiv">
-                <label className="formDiv__form--label">Where are you moving to and from?</label>
-                <form className="formDiv__form" onSubmit={this.handleSubmit}>
-                    <LocationForm />
-                </form>
-            </div>
-        )
+        console.log('form container state', this.state)
+        switch(this.state.currentStep) {
+            case 1:
+                return <LocationForm handleData={this.handleData} />
+            default: 
+                return <p>An error occurred.</p>
+        }
     }
 }
 

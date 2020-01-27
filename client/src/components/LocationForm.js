@@ -11,15 +11,27 @@ export default class LocationForm extends React.Component {
     }
 
     handleChange = e => {
-       e.target.name === 'startingZip' ? this.setState({ startingZip: e.target.value }) : this.setState({ destinationZip: e.target.value })
+        e.target.name === 'startingZip' ? this.setState({ startingZip: e.target.value }) : this.setState({ destinationZip: e.target.value })
+    }
+
+    handleSubmit = () => {
+       const data = {
+           startingZip: this.state.startingZip,
+           destinationZip: this.state.destinationZip
+       }
+       this.props.handleData(data);
     }
 
     render() {
         return (
-            <React.Fragment>
-                <input type="text" name="startingZip" placeholder="Starting zip code" value={this.state.startingZip} onChange={e => this.handleChange(e)} />
-                <input type="text" name="destinationZip" placeholder="Destination zip code" value={this.state.startingZip} onChange={e => this.handleChange(e)} />
-            </React.Fragment>
-        )
+            <div className="formDiv">
+                <form className="formDiv__form" onSubmit={this.handleSubmit}>
+                    <label className="formDiv__form--label">Please enter your starting and ending zip codes.</label>
+                    <input type="text" name="startingZip" placeholder="Starting zip code" value={this.state.startingZip} onChange={e => this.handleChange(e)} />
+                    <input type="text" name="destinationZip" placeholder="Destination zip code" value={this.state.destinationZip} onChange={e => this.handleChange(e)} />
+                    <input type="submit" value="Next" className="formDiv__form--button" />
+                </form>
+            </div>
+        );
     }
 }
