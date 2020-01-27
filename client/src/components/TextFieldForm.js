@@ -18,7 +18,7 @@ export default class TextFieldForm extends React.Component {
     render() {
         return (
             <div className="formDiv">
-                <form className="formDiv__form" onSubmit={this.props.handleSubmit}>
+                <form className="formDiv__form" onSubmit={e => this.props.handleSubmit(e)}>
                     <label className="formDiv__form--label">{this.props.currentSection}</label>
                     <input type="text"
                         name={this.props.currentSection}

@@ -27,6 +27,7 @@ class Form extends React.Component {
         switch(this.props.currentSection) {
             case 'Starting Zip Code':
             case 'Destination Zip Code':
+            case 'Number of Bedrooms':
                 return <TextFieldForm currentSection={this.props.currentSection} handleSubmit={this.handleSubmit} />;
             default:
                 return <p>An error occurred. Please try again.</p>;

@@ -6,9 +6,12 @@ const handleInfo = (state = {
   case 'ADD_CUSTOMER_INFO':
     switch(state.currentSection){
       case 'Starting Zip Code':
+        //debugger;
         return {...state, startingZipCode: action.formData.data, currentSection: 'Destination Zip Code'};
       case 'Destination Zip Code':
         return {...state, destinationZipCode: action.formData.data, currentSection: 'Number of Bedrooms'};
+      case 'Number of Bedrooms':
+        console.log('hit reducer for num of rooms', state);
       default:
         return state;
     }
