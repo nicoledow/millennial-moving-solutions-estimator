@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import HeaderImg from './components/HeaderImg';
-import Form from './components/Form';
+import FormContainer from './containers/FormContainer';
 
 export default class App extends React.Component {
 
@@ -18,7 +18,7 @@ export default class App extends React.Component {
             </Route>
             <Route exact path="/form">
               <HeaderImg />
-              <Form />
+              <FormContainer />
             </Route>
           </Switch>
         </Router>

@@ -8,13 +8,10 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import handleInfo from './reducers/handleInfo';
 
-const store = createStore(handleInfo, applyMiddleware(thunk));
 
 
 ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>, 
+      <App />, 
     document.getElementById('root'))
 
 
