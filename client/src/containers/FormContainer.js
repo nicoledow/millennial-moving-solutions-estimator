@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import LocationForm from '../components/LocationForm';
+import BedroomsForm from '../components/BedroomsForm';
 
 export default class FormContainer extends React.Component {
     constructor() {
@@ -22,7 +23,6 @@ export default class FormContainer extends React.Component {
     }
 
     handleData = data => {
-        //update this.state to reflect data typed into form
         if (data.startingZip) {
             this.setState({ startingZip: data.startingZip });
         }
@@ -40,6 +40,8 @@ export default class FormContainer extends React.Component {
         switch(this.state.currentStep) {
             case 1:
                 return <LocationForm handleData={this.handleData} />
+            case 2:
+                return <BedroomsForm handleData={this.handleData} />
             default: 
                 return <p>An error occurred.</p>
         }
