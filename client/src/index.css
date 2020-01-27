@@ -58,6 +58,14 @@ p {
   animation: moveInFromBottom 2s ease-out;
 }
 
+.header__btn a {
+  text-decoration: none;
+}
+
+.header__btn a:visited {
+  color: black;
+}
+
 .header__btn:hover,
 .form__button:hover {
   transform: translateY(-0.2rem);
