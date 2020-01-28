@@ -8,7 +8,7 @@ export default class BedroomsForm extends React.Component {
                 <form className="formDiv__form" onSubmit={this.props.handleData}>
                     <label className="formDiv__form--label">
                         How many bedrooms are you moving?
-                        <select name="numOfBedrooms">
+                        <select name="numOfBedrooms" className="formDiv__form--select">
                             <option value="1">Studio or one-bedroom apartment</option>
                             <option value="2">Two bedroom home or apartment</option>
                             <option value="3">Three bedroom home or apartment</option>
@@ -23,9 +23,7 @@ export default class BedroomsForm extends React.Component {
                     <br/>
                     <label className="formDiv__form--label">
                         Is there an elevator?
-                        <br/>
-                        <input type="radio" name="elevator" value="true" /> Yes
-                        <input type="radio" name="elevator" value="false" /> No
+                        <input type="checkbox" name="elevator" />
                     </label>
                 </form>
             </div>
