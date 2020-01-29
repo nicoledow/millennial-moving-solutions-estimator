@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import HeaderImg from './components/HeaderImg';
 import FormContainer from './containers/FormContainer';
+import Estimate from './components/Estimate';
 
 export default class App extends React.Component {
 
@@ -19,6 +20,10 @@ export default class App extends React.Component {
             <Route exact path="/form">
               <HeaderImg />
               <FormContainer />
+            </Route>
+            <Route exact path="/estimate">
+              <HeaderImg />
+              <Estimate />
             </Route>
           </Switch>
         </Router>
