@@ -26,26 +26,33 @@ class FormContainer extends React.Component {
 
     render() {
         console.log('form container props', this.props)
-        return (
-            <div>
-                <LocationForm saveData={this.props.saveData} />
-                <BedroomsForm saveData={this.props.saveData} />
-                <ParkingForm saveData={this.props.saveData} />
-                <CustomerContactForm saveData={this.props.saveData} />
-                <button className="formDiv__form--button" onClick={this.handleFormSubmit}>Submit</button>
-            </div>
-        )
+        // return (
+        //     <div>
+        //         <LocationForm saveData={this.props.saveData} />
+        //         <BedroomsForm saveData={this.props.saveData} />
+        //         <ParkingForm saveData={this.props.saveData} />
+        //         <CustomerContactForm saveData={this.props.saveData} />
+        //         <button className="formDiv__form--button" onClick={this.handleFormSubmit}>Submit</button>
+        //     </div>
+        // )
+        switch(this.props.next){
+            case 'location':
+                return <LocationForm saveData={this.props.saveData} />
+            case 'bedrooms':
+                return <BedroomsForm saveData={this.props.saveData} />
+            case 'parking':
+                return <ParkingForm saveData={this.props.saveData} />
+            case 'contact':
+                return <CustomerContactForm saveData={this.props.saveData} />
+            default:
+                return <h3>An error occurred.</h3>
+        }
        
     }
 }
 
 const mapStateToProps = state => {
-    return { 
-        locationData: state.locationData,
-        bedroomData: state.bedroomData,
-        parkingInfo: state.parkingInfo,
-        contactInfo: state.contactInfo 
-    }
+    return { next: state.next };
 }
 
 const mapDispatchToProps = dispatch => {
