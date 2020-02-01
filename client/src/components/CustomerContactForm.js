@@ -45,7 +45,6 @@ export default class CustomerContactForm extends React.Component {
                         <input type="text" name="customerEmail" value={this.state.customerEmail} placeholder="Email address" onChange={e => this.handleEmailChange(e)} />
                         <input type="text" name="customerPhone" value={this.state.customerPhone} placeholder="Phone number" onChange={e => this.handlePhoneChange(e)} />
                     </label>
-                    <input type="submit" className="formDiv__form--button" value="Submit" />
                 </form>
             </div>
         )

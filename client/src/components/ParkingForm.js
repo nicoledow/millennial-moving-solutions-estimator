@@ -4,15 +4,16 @@ export default class ParkingForm extends React.Component {
 
     handleSubmit = () => {
         const data = {
-            parkingDistance: document.querySelector('select').value
+            parkingDistance: document.querySelector('select').value,
+            infoType: 'parking'
         };
-        this.props.handleData(data);
+        this.props.saveData(data);
     }
 
     render() {
         return (
             <div className="formDiv">
-                <form className="formDiv__form" onSubmit={this.props.handleData}>
+                <form className="formDiv__form">
                     <label className="formDiv__form--label">
                         Where will M.M.S. be able to park during your move?
                         <select className="formDiv__form--select">
@@ -22,8 +23,8 @@ export default class ParkingForm extends React.Component {
                             <option value="farther">Farther</option>
                         </select>
                     </label>
-                    <button className="formDiv__form--button" onClick={this.handleSubmit}>Next</button>
             </form>
+            <button className="formDiv__form--button">Next</button>
             </div>
         )
     }

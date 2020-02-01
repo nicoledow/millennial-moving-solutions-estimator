@@ -2,19 +2,21 @@ import React from 'react';
 
 export default class BedroomsForm extends React.Component {
 
-    onSubmit = () => {
+    submitForm = () => {
+        //e.preventDefault();
         const data = {
             numOfBedrooms: document.querySelector('select').value,
             numOfFloors: document.querySelector('input[type=number').value,
-            elevator: document.querySelector('input[type=checkbox]').checked
+            elevator: document.querySelector('input[type=checkbox]').checked,
+            infoType: 'bedroom and elevator info'
         };
-        this.props.handleData(data);
+        this.props.saveData(data);
     }
 
     render() {
         return (
             <div className="formDiv">
-                <form className="formDiv__form" onSubmit={this.props.handleData}>
+                <form className="formDiv__form">
                     <label className="formDiv__form--label">
                         How many bedrooms are you moving?
                         <select name="numOfBedrooms" className="formDiv__form--select">
@@ -34,8 +36,8 @@ export default class BedroomsForm extends React.Component {
                         Is there an elevator?
                         <input type="checkbox" name="elevator" />
                     </label>
-                    <button className="formDiv__form--button" onClick={this.onSubmit}>Next</button>
                 </form>
+                <button className="formDiv__form--button">Next</button>
             </div>
         )
     }
