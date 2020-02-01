@@ -11,39 +11,30 @@ class FormContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-
+            step: 1
         }
     }
 
-    updateState = () => {
-        //update this component's state
-    }
-
-    handleFormSubmit = () => {
-        debugger;
-        //submit post request to db using this component's state
-    }
+   updateStep = () => {
+       this.setState(prevState => {
+           return { step: prevState.step + 1 }
+       })
+   }
 
     render() {
-        console.log('form container props', this.props)
-        // return (
-        //     <div>
-        //         <LocationForm saveData={this.props.saveData} />
-        //         <BedroomsForm saveData={this.props.saveData} />
-        //         <ParkingForm saveData={this.props.saveData} />
-        //         <CustomerContactForm saveData={this.props.saveData} />
-        //         <button className="formDiv__form--button" onClick={this.handleFormSubmit}>Submit</button>
-        //     </div>
-        // )
-        switch(this.props.next){
-            case 'location':
-                return <LocationForm saveData={this.props.saveData} />
-            case 'bedrooms':
-                return <BedroomsForm saveData={this.props.saveData} />
-            case 'parking':
-                return <ParkingForm saveData={this.props.saveData} />
-            case 'contact':
-                return <CustomerContactForm saveData={this.props.saveData} />
+        console.log('form container state', this.state)
+        switch(this.state.step){
+            case 1:
+                return <LocationForm updateStep={this.updateStep} saveData={this.props.saveData} />
+            case 2:
+                return <BedroomsForm updateStep={this.updateStep} saveData={this.props.saveData} />
+            case 3:
+                return <ParkingForm updateStep={this.updateStep} saveData={this.props.saveData} />
+            case 4:
+                return <CustomerContactForm updateStep={this.updateStep} saveData={this.props.saveData} />
+            case 5:
+                console.log('completeState', this.props.completeState)
+                return <h4>Form complete!</h4>
             default:
                 return <h3>An error occurred.</h3>
         }
@@ -52,7 +43,7 @@ class FormContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    return { next: state.next };
+    return { completeState: state };
 }
 
 const mapDispatchToProps = dispatch => {

@@ -7,6 +7,7 @@ export default class ParkingForm extends React.Component {
             parkingDistance: document.querySelector('select').value,
             infoType: 'parking'
         };
+        this.props.updateStep();
         this.props.saveData(data);
     }
 
@@ -24,7 +25,7 @@ export default class ParkingForm extends React.Component {
                         </select>
                     </label>
             </form>
-            <button className="formDiv__form--button">Next</button>
+            <button className="formDiv__form--button" onClick={this.handleSubmit}>Next</button>
             </div>
         )
     }

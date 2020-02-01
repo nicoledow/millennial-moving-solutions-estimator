@@ -22,6 +22,7 @@ export default class LocationForm extends React.Component {
            destinationZip: this.state.destinationZip,
            infoType: 'customer location'
        };
+       this.props.updateStep();
        this.props.saveData(data);
     }
 
