@@ -5,7 +5,7 @@ export default function saveData(data) {
         switch(data.infoType) {
             case 'customer location':
                 console.log('dispatching customer location');
-                dispatch({ type: 'ADD_LOCATION_DATA', startingZip: data.startingZip, destinationZip: data.destinationZip })
+                dispatch({ type: 'ADD_LOCATION_DATA', data })
             case 'bedroom and elevator info':
                 console.log('bedroom elevator info in saveData action')
                 dispatch({ type: 'ADD_BEDROOM_ELEVATOR_INFO', numOfBedrooms: data.numOfBedrooms, numOfFloors: data.numOfFloors, elevator: data.elevator})
