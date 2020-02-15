@@ -22,7 +22,6 @@ class FormContainer extends React.Component {
    }
 
     render() {
-        console.log('form container state', this.state)
         switch(this.state.step){
             case 1:
                 return <LocationForm updateStep={this.updateStep} saveData={this.props.saveData} />
@@ -33,7 +32,7 @@ class FormContainer extends React.Component {
             case 4:
                 return <CustomerContactForm updateStep={this.updateStep} saveData={this.props.saveData} />
             case 5:
-                console.log('completeState', this.props.completeState)
+                console.log('final state', this.props.completeState)
                 return <h4>Form complete!</h4>
             default:
                 return <h3>An error occurred.</h3>
