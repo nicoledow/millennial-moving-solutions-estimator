@@ -8,8 +8,6 @@ export default function handleInfo(state = {}, action) {
             return {...state, parkingDistance: action.parkingDistance };
         case 'ADD_CUSTOMER_CONTACT_INFO':
             return {...state, customerName: action.customerName, customerEmail: action.customerEmail, customerPhone: action.customerPhone };
-        case 'START_GOOGLE_MAPS_API_REQ':
-            return {...state, requesting: true}
         default:
             return state;
     }
