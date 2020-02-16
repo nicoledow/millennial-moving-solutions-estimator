@@ -34,6 +34,8 @@ class FormContainer extends React.Component {
                 return <CustomerContactForm updateStep={this.updateStep} saveData={this.props.saveData} />
             case 5:
                 this.props.postDataToGetEstimate(this.props.completeState);
+            case 6:
+                return <p>Form complete!</p>
             default:
                 return <h3>An error occurred.</h3>
         }

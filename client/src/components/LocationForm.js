@@ -7,7 +7,8 @@
         this.state = {
             startingCity: '',
             destinationCity: '',
-            startingState: 'AL'
+            startingState: 'AL',
+            destinationState: 'AL'
         };
     }
 
