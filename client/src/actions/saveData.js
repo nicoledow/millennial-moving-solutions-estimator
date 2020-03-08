@@ -1,5 +1,4 @@
 export default function saveData(data) {
-    //debugger;
     return (dispatch) => {
         switch(data.infoType) {
             case 'customer location':

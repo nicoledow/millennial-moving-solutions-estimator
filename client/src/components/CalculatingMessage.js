@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class CalculatingMessage extends React.Component {
 
     componentDidMount() {
-        debugger;
         this.props.sendDataForEstimate(this.props.data);
     }
 

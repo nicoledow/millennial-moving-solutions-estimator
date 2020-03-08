@@ -3,7 +3,6 @@ import React from 'react';
 export default class BedroomsForm extends React.Component {
 
     submitForm = e => {
-        console.log('hit submit form fn')
         e.preventDefault();
         const data = {
             numOfBedrooms: document.querySelector('select').value,
