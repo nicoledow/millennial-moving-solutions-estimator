@@ -5,8 +5,9 @@ import LocationForm from '../components/LocationForm';
 import BedroomsForm from '../components/BedroomsForm';
 import ParkingForm from '../components/ParkingForm';
 import CustomerContactForm from '../components/CustomerContactForm';
+import CalculatingMessage from '../components/CalculatingMessage';
 import saveData from '../actions/saveData';
-import getEstimate from '../actions/getEstimate';
+//import getEstimate from '../actions/getEstimate';
 
 class FormContainer extends React.Component {
     constructor() {
@@ -33,7 +34,9 @@ class FormContainer extends React.Component {
             case 4:
                 return <CustomerContactForm updateStep={this.updateStep} saveData={this.props.saveData} />
             case 5:
-                this.props.postDataToGetEstimate(this.props.completeState);
+                //debugger;
+                //this.props.postDataToGetEstimate(this.props.completeState);
+                return <CalculatingMessage data={this.props.completeState} />
             case 6:
                 return <p>Form complete!</p>
             default:
@@ -49,8 +52,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        saveData: customerInfo => dispatch(saveData(customerInfo)),
-        postDataToGetEstimate: completeState => dispatch(getEstimate(completeState))
+        saveData: customerInfo => dispatch(saveData(customerInfo))
+        //postDataToGetEstimate: completeState => dispatch(getEstimate(completeState))
     }
 };
 
