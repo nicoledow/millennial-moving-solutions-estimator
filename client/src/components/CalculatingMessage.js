@@ -1,10 +1,12 @@
 import React from 'react';
 import getEstimate from '../actions/getEstimate';
+import { connect } from 'react-redux';
 
-export default class CalculatingMessage extends React.Component {
+class CalculatingMessage extends React.Component {
 
     componentDidMount() {
-        getEstimate(this.props.data);
+        debugger;
+        this.props.sendDataForEstimate(this.props.data);
     }
 
     render() {
@@ -15,3 +17,11 @@ export default class CalculatingMessage extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        sendDataForEstimate: data => dispatch(getEstimate(data)) 
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CalculatingMessage);

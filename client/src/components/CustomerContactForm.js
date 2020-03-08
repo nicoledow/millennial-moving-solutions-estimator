@@ -25,8 +25,8 @@ export default class CustomerContactForm extends React.Component {
         this.setState({ customerPhone: phoneNum });
     }
 
-    handleSubmit = () => {
-        console.log('submitted');
+    handleSubmit = e => {
+        e.preventDefault();
         const data = {
             customerName: this.state.customerName,
             customerEmail: this.state.customerEmail,
@@ -40,13 +40,10 @@ export default class CustomerContactForm extends React.Component {
     render() {
         return (
             <div className="formDiv">
-                <form className="formDiv__form" onSubmit={this.handleSubmit}>
-                    <label className="formDiv__form--label">
-                        How can M.M.S. contact you?
+                <form className="formDiv__form" onSubmit={e => this.handleSubmit(e)}>
                         <input type="text" name="customerName" value={this.state.customerName} placeholder="Name" onChange={e => this.handleNameChange(e)} />
                         <input type="text" name="customerEmail" value={this.state.customerEmail} placeholder="Email address" onChange={e => this.handleEmailChange(e)} />
                         <input type="text" name="customerPhone" value={this.state.customerPhone} placeholder="Phone number" onChange={e => this.handlePhoneChange(e)} />
-                    </label>
                     <button type="submit" className="formDiv__form--button">Complete</button>
                 </form>
             </div>
