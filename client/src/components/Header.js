@@ -13,9 +13,7 @@ export default class Header extends React.Component {
         return (
             <div className="header">
                 <img src={Logo} alt="Logo" className="header__logo" />
-                <p className="header__p">Intro text for estimate tool. Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Suscipit adipiscing bibendum est ultricies integer. Libero nunc consequat interdum varius sit amet mattis vulputate.</p>
+                <p className="header__p">Answer a few simple questions to get your estimate.</p>
             <button className="header__btn"><Link to="/form">Get Started</Link></button>
         </div>
         );
