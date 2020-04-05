@@ -11,7 +11,7 @@ export default function handleInfo(state = { requesting: false }, action) {
         case 'START_POSTING_CUSTOMER_INFO':
             return {...state, requesting: true}
         case 'QUOTE_GENERATED':
-            return {...state, requesting: false, quote: action.quote}
+            return {...state, requesting: false, quote: action.quote }
         default:
             return state;
     }

@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-const BASE_URL = 'https://mms-estimates.herokuapp.com'
+const BASE_URL = 'http://localhost:3000'
 
 const store = createStore(handleInfo, applyMiddleware(thunk));
 
